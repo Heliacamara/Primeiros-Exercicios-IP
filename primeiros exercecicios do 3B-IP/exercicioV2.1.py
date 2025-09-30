@@ -5,12 +5,12 @@
 
 #begin_inputs
 
-a=4
-b=8
-c=10
+a=14
+b=23
+c=32
 x=a
 y=b
-z=15
+z=41
 
 #end_inputs
 
@@ -18,6 +18,6 @@ z=15
 #os prints vao a partir daqui
 
 print("{} e {} sao {} e {}".format(x,y,a,b))
-print("Total: {} ".format(x+y))
-print("{} {} {} sao numeros inteiros".format(a,b,c))
+print("Total: {} ".format(x+b))
+print("{} {} {} sao numeros inteiros".format(x,y,c))
 print("{} + 0 = {}".format(z,z+0))
