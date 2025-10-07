@@ -7,11 +7,12 @@
  
 
 #end_inputs
-soma= 0
+
+soma = 0
 while True:
     peso = int(input())
     soma += peso
-    if soma> 500:          
+    if soma > 500:          
         print("Peso excedido")
         break
 
