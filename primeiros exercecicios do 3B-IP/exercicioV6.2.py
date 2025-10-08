@@ -4,6 +4,12 @@
 
 
 #begin_inputs
-n = int(input())
+n = int(input("Digite um valor:"))
 #end_inputs
 
+def subida(n):
+    for i in range(1, n +1):
+        for s in range(1, i + 1):
+            print(s, end= ' ')
+        print()        
+subida(n)            
