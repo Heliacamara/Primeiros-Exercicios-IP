@@ -12,4 +12,4 @@ def subida(n):
         for s in range(1, i + 1):
             print(s, end= ' ')
         print()        
-subida(n)            
+subida(n)                
