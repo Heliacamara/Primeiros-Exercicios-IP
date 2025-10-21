@@ -4,6 +4,11 @@
 
 
 #begin_inputs
-
+n = 127
 #end_inputs
 
+def inverte_numero(n):
+    s= str (n)
+    s_invertido = s [::-1]
+    return int (s_invertido)
+print(inverte_numero(n))
