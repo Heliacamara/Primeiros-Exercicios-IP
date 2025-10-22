@@ -8,10 +8,10 @@ letras = ['p', 'e', 'd','r']
 palavra= 'pedir'
 #end_inputs
 
-def letras_disponiveis(letras,palavra):
+def letras_voluntarias(letras,palavra):
     for letra in palavra:
      if letra not in letras:
         return False
     return True
 
-print(letras_disponiveis(letras,palavra))
+print(letras_voluntarias(letras,palavra))
