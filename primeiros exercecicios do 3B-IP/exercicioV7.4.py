@@ -2,13 +2,11 @@
 # @sid 20251174010003
 # @aid V7.4
 
-QUANT=3
 nome = []
 telefone= []
 for i in range(3):
     pessoas=input("Nome:")
-    nome.append(pessoas)
     numero=input("Telefone:")
-    telefone.append(numero)
-print(nome)
+    c={pessoas:numero}
+    telefone.append(c)
 print(telefone)
