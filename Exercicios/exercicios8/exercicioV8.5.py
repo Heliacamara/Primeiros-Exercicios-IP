@@ -4,30 +4,28 @@
 
 contatos = "text85.txt"
 
-def ler():
-    with open(contatos,"r") as r:
+def add(nome, tele):
+    with open(contatos, "a") as escreva:
+        escreva.write(f"{nome} {tele}\n")
+
+def check(contatos):
+    with open(contatos, "r") as leia:
+        telefones = leia.readlines()
+        for contato in telefones:
+            print(contato.strip())
+
+print("1 - Adicionar Contato")
+print("2 - Ver Contatos")
+print("3 - Sair")
+pergunta = input("O que voce quer fazer? ")
+
+while pergunta != "3":
+    if pergunta == "1":
         nome = input("Nome: ")
-        contato = r.readlines()
-        for contate in contato:
-            print(contate.strip(), "\n")
-        else:
-            print("Contato nao encontrado\n")
-
-def salvar():
-    with open("text85.txt", "w") as arq:
-        for nome, tel in contatos.items():
-            arq.write(f"{nome};{tel}\n")
-    print("Contatos salvos\n")
-
-while True:
-    print("1-Ler  2-Salvar  3-Sair")
-    op = input("Opcoes: ")
-
-    if op == "1":
-        ler()
-    elif op == "2":
-        salvar()
-    elif op == "3":
-        break
+        tele = input("Número: ")
+        add(nome, tele)
+    elif pergunta == "2":
+        check(contatos)
     else:
-        print("Opcao invalida\n")
+        print("Escolha nao identificada")
+    pergunta = input("O que voce quer fazer? ")

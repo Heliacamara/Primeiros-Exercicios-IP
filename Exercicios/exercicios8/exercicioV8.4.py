@@ -8,7 +8,7 @@ with open("text84.txt", "w") as arq:
         cpf = input("CPF: ")
         arq.write(f"{cpf};{nome}\n")
 
-print("Conteudo do arquivo:")
+print("Os cpfs e os nomes:")
 with open("text84.txt", "r") as arq:
     for linha in arq:
         print(linha.strip())

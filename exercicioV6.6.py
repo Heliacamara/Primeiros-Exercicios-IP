@@ -5,32 +5,34 @@
 
 import random
 
-numero_secreto = random.randint(1, 100)
+import random
 
+def sorteio():
+    sorteado = random.randint(1, 1000000)  
+    trys = 0  
+    limite_tentativas = 6  
 
-palpite = None
-tentativas = 0
-limite_tentativa= 10
+    print(f"Voce tem {limite_tentativas} tentativas para acertar o numero entre 1 e 1.000.000.")
+    
+    while trys < limite_tentativas:  
+        try:
+            palpite = int(input("Digite um numero entre 1 e 1000000: ")) 
+        except ValueError:  
+            print("Insira um numero valido.")
+            continue
+        
+        trys += 1  
 
-print(f"Você tem {limite_tentativa} tentativas.\n")
+        if palpite < sorteado:
+            print("O numero secreto e MAIOR.")
+        elif palpite > sorteado:
+            print("O numero secreto e MENOR.")
+        else:
+            print(f"Parabéns! Voce acertou,o numero secreto era {sorteado}.")
+            print(f"Voce acertou em {trys} tentativas!")
+            break  
 
-while palpite != numero_secreto:
-    try:
-        palpite = int(input("Digite seu palpite: "))
-        tentativas += 1
+    if trys >= limite_tentativas and palpite != sorteado:  
+        print(f"Voce perdeu,o numero secreto era {sorteado}.")
 
-        if palpite < 1 or palpite > 1000000:
-            print(" Jogada inválida! Digite um número entre 1 e 100.")
-        elif palpite < numero_secreto:
-            print("O número secreto é MAIOR que seu palpite.\n")
-        elif palpite > numero_secreto:
-            print("O número secreto é MENOR que seu palpite.\n")
-    except ValueError:
-        print("Numero inválido! Digite um número inteiro.\n")
-    else:
-        print(f" Você acertou o número secreto: {numero_secreto}")
-        print(f"Você acertou em {tentativas} tentativas.")
-        break
-    if palpite != numero_secreto:
-        print("Acabaram as suas tentativas!")
-        print(f"O número secreto era {numero_secreto}")
+sorteio()

@@ -7,28 +7,23 @@
 
 #end_inputs
 
-valores = list(map(int, input("Jogadas: ").split()))
+dado = int(input("Digite o valor sorteado no dado: "))
 
-jogadas = valores[0]
+if dado == 7 or dado == 11:
+    print("Voce ganhou!")
 
-if jogadas in [7, 11]:
-    print("Você tirou um natural (7 ou 11)!")
-    print("Você ganhou!")
-elif jogadas in [2, 3, 12]:
-    print("Você tirou um craps (2, 3 ou 12)!")
-    print("Você perdeu!")
+elif dado == 2 or dado == 3 or dado == 12:
+    print("Voce perdeu!")
+
 else:
-    numero = jogadas
-    print(f"Seu ponto é {numero}. Continue jogando até tirar {numero} novamente (ou 7 para perder).")
-
-    for valor in valores[1:]:
-        if valor == numero:
-            print("Você tirou seu ponto novamente!")
-            print("Você ganhou!")
+   ponto = dado
+   valor_dado = int(input("Digite o valor sorteado no dado: "))
+   while True:
+        if valor_dado == ponto:
+            print("Voce ganhou!")
+            break    
+        elif valor_dado == 7:
+            print("Voce perdeu!")
             break
-        elif valor == 7:
-            print("Você tirou 7 antes do ponto!")
-            print("Você perdeu!")
-            break
-    else:
-        print("O jogo terminou sem resultado (faltaram jogadas).")
+        else:
+            valor_dado = int(input("Digite o valor sorteado no dado: "))
